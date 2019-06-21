@@ -1,0 +1,9 @@
+{
+    "name": "narcoticfresh/serializer-testcase",
+    "autoload": {
+        "psr-4": {"TestCase\\": "src/"}
+    },
+    "require": {
+        "jms/serializer": "^3.0"
+    }
+}
