@@ -38,8 +38,5 @@ $mainClass->setMembers($members);
 
 echo $serializer->serialize($mainClass, 'json');
 
-// this serializes to '{"members":[{"name":"member1"},{}]}' -> why is the empty object rendered?
-// can we archieve an output '{"members":[{"name":"member1"}]}' ?
+// this serializes to '{"members":[]}'
 
-// our problem: if we have no Listener that changes the Type to EmptyClass -> we have an empty object {} in the output
-// -> with the change to EmptyClass and our handler returning null, with update to serializer 2 we have a null in the output, which we don't want
