@@ -11,7 +11,12 @@ class ClassA {
     /**
      * @Type("array<TestCase\Entities\ClassASub>")
      */
-    private $members = [];
+    private $members;
+
+    /**
+     * @Type("array<TestCase\Entities\ClassAHiddenSub>")
+     */
+    private $otherArray;
 
     /**
      * get Members
@@ -33,6 +38,19 @@ class ClassA {
         $this->members = $members;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getOtherArray()
+    {
+        return $this->otherArray;
+    }
 
-
+    /**
+     * @param mixed $otherArray
+     */
+    public function setOtherArray($otherArray)
+    {
+        $this->otherArray = $otherArray;
+    }
 }
