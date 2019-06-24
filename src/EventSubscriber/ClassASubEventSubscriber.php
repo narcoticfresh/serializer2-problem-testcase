@@ -22,9 +22,9 @@ class ClassASubEventSubscriber implements EventSubscriberInterface
 
     public function onPreSerialize(PreSerializeEvent $event)
     {
-        if ($event->getObject()->getName() == 'member2') {
-            $event->setType('TestCase\\Entities\\EmptyClass');
-        }
+        // always change type so we end up in an empty array
+        $event->setType('TestCase\\Entities\\EmptyClass');
+
         return $event;
     }
 }

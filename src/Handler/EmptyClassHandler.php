@@ -4,6 +4,7 @@
 namespace TestCase\Handler;
 
 use JMS\Serializer\Context;
+use JMS\Serializer\Exception\NotAcceptableException;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\JsonDeserializationVisitor;
@@ -31,11 +32,19 @@ class EmptyClassHandler implements SubscribingHandlerInterface
 
     public function serializeDateTimeToJson(JsonSerializationVisitor $visitor, $object, array $type, Context $context)
     {
+        if (!$context->shouldSerializeNull()) {
+            throw new NotAcceptableException();
+        }
+
         return null;
     }
 
     public function deserializeDateTimeToJson(JsonDeserializationVisitor $visitor, $object, array $type, Context $context)
     {
+        if (!$context->shouldSerializeNull()) {
+            throw new NotAcceptableException();
+        }
+
         return null;
     }
 }
