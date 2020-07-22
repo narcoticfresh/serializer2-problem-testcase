@@ -4,12 +4,14 @@ namespace TestCase\Entities;
 
 use JMS\Serializer\Annotation\AccessType;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\SkipWhenEmpty;
 
 /** @AccessType("public_method") */
 class ClassA {
 
     /**
      * @Type("array<TestCase\Entities\ClassASub>")
+     * @SkipWhenEmpty
      */
     private $members = [];
 

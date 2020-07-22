@@ -4,12 +4,14 @@ namespace TestCase\Entities;
 
 use JMS\Serializer\Annotation\AccessType;
 use JMS\Serializer\Annotation\Type;
+use JMS\Serializer\Annotation\Exclude;
 
 /** @AccessType("public_method") */
 class ClassASub {
 
     /**
      * @Type("string")
+     * @Exclude
      */
     private $name;
 
